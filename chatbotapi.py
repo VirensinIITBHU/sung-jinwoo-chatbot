@@ -36,6 +36,7 @@ MEMORY_WINDOW = 6
 
 
 
+
 # ---------------- TOKENIZER ----------------
 
 encoding = tiktoken.get_encoding("cl100k_base")
