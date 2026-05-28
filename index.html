@@ -8,7 +8,10 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <link
         rel="preconnect"
@@ -26,19 +29,48 @@
         rel="stylesheet"
     >
 
+    <style>
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #chat {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        input,
+        textarea,
+        button {
+            font-size: 16px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(168,85,247,0.4);
+            border-radius: 999px;
+        }
+
+    </style>
+
 </head>
 
 <body class="
     bg-black
     text-white
-    h-screen
+
+    min-h-screen
 
     flex
     justify-center
     items-center
 
     overflow-hidden
-    overscroll-none
 
     font-['Rajdhani']
 ">
@@ -82,7 +114,7 @@
 
         max-w-4xl
 
-        h-[100vh]
+        h-[100dvh]
         md:h-[92vh]
 
         mx-2
@@ -95,7 +127,7 @@
         border
         border-white/10
 
-        rounded-none
+        rounded-[24px]
         md:rounded-[32px]
 
         shadow-[0_0_50px_rgba(168,85,247,0.15)]
@@ -155,7 +187,8 @@
             id="chat"
             class="
                 flex-1
-                overflow-y-auto
+
+                overflow-y-scroll
 
                 p-3
                 sm:p-4
@@ -183,6 +216,8 @@
             backdrop-blur-xl
 
             flex
+            items-center
+
             gap-2
             md:gap-3
         ">
@@ -387,6 +422,8 @@
             chat.scrollTop =
                 chat.scrollHeight
 
+            window.scrollTo(0, 0)
+
             // FETCH STREAM
 
             const response = await fetch(
@@ -437,26 +474,14 @@
 
                 chat.scrollTop =
                     chat.scrollHeight
+
+                window.scrollTo(0, 0)
             }
         }
 
     </script>
 
-    <!-- SCROLLBAR -->
-
-    <style>
-
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: rgba(168,85,247,0.4);
-            border-radius: 999px;
-        }
-
-    </style>
-
 </body>
 
 </html>
+
