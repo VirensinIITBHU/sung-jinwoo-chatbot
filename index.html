@@ -1,29 +1,30 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
 
-    <title >VIREN Chatbot</title>
+    <title>VIREN Chatbot</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    
-<link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;700&display=swap"
-    rel="stylesheet"
->
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;700&display=swap"
+        rel="stylesheet"
+    >
 
 </head>
 
@@ -37,10 +38,10 @@
     items-center
 
     overflow-hidden
+    overscroll-none
 
     font-['Rajdhani']
 ">
-
 
     <!-- BACKGROUND GLOW -->
 
@@ -78,8 +79,14 @@
 
     <div class="
         w-full
+
         max-w-4xl
-        h-[92vh]
+
+        h-[100vh]
+        md:h-[92vh]
+
+        mx-2
+        md:mx-4
 
         bg-white/5
 
@@ -88,7 +95,8 @@
         border
         border-white/10
 
-        rounded-[32px]
+        rounded-none
+        md:rounded-[32px]
 
         shadow-[0_0_50px_rgba(168,85,247,0.15)]
 
@@ -107,32 +115,35 @@
             border-b
             border-white/10
 
-            px-8
-            py-5
+            px-4
+            md:px-8
+
+            py-4
+            md:py-5
         ">
 
             <h1 class="
-                
-    text-5xl
-    font-bold
+                text-2xl
+                sm:text-3xl
+                md:text-5xl
 
-    font-['Orbitron']
+                font-bold
 
-    tracking-widest
+                font-['Orbitron']
 
-    text-purple-300
+                tracking-wide
+                md:tracking-widest
 
-    drop-shadow-[0_0_20px_rgba(168,85,247,0.9)]
+                text-purple-300
 
-    animate-pulse
-"
+                drop-shadow-[0_0_20px_rgba(168,85,247,0.9)]
 
-
+                animate-pulse
             ">
                 VIREN Chatbot
             </h1>
 
-            <p class="text-zinc-400 mt-2">
+            <p class="text-zinc-400 mt-2 text-sm md:text-base">
                 Sung Jin-Woo AI Assistant
             </p>
 
@@ -145,8 +156,13 @@
             class="
                 flex-1
                 overflow-y-auto
-                p-6
-                space-y-6
+
+                p-3
+                sm:p-4
+                md:p-6
+
+                space-y-4
+                md:space-y-6
             "
         >
 
@@ -155,7 +171,9 @@
         <!-- INPUT AREA -->
 
         <div class="
-            p-5
+            p-3
+            sm:p-4
+            md:p-5
 
             border-t
             border-white/10
@@ -165,7 +183,8 @@
             backdrop-blur-xl
 
             flex
-            gap-3
+            gap-2
+            md:gap-3
         ">
 
             <input
@@ -175,6 +194,11 @@
                 class="
                     flex-1
 
+                    min-w-0
+
+                    text-sm
+                    md:text-base
+
                     bg-white/5
 
                     border
@@ -182,8 +206,11 @@
 
                     rounded-2xl
 
-                    px-5
-                    py-4
+                    px-4
+                    md:px-5
+
+                    py-3
+                    md:py-4
 
                     text-white
 
@@ -205,8 +232,14 @@
                     bg-purple-600
                     hover:bg-purple-700
 
-                    px-6
-                    py-4
+                    px-4
+                    md:px-6
+
+                    py-3
+                    md:py-4
+
+                    text-sm
+                    md:text-base
 
                     rounded-2xl
 
@@ -216,6 +249,8 @@
 
                     shadow-lg
                     shadow-purple-500/20
+
+                    shrink-0
                 "
             >
                 Arise
@@ -229,19 +264,14 @@
 
     <script>
 
-        // ENTER KEY SUPPORT
-
         document
             .getElementById("messageInput")
             .addEventListener("keydown", function(event) {
 
                 if (event.key === "Enter") {
-
                     sendMessage()
                 }
         })
-
-        // MAIN CHAT FUNCTION
 
         async function sendMessage() {
 
@@ -250,8 +280,6 @@
 
             const message =
                 input.value
-
-            // prevent empty messages
 
             if (message.trim() === "") {
                 return
@@ -272,12 +300,19 @@
 
                         text-white
 
-                        px-5
-                        py-4
+                        px-4
+                        md:px-5
+
+                        py-3
+                        md:py-4
 
                         rounded-3xl
 
-                        max-w-[75%]
+                        max-w-[90%]
+                        md:max-w-[75%]
+
+                        text-sm
+                        md:text-base
 
                         shadow-lg
                     ">
@@ -316,12 +351,19 @@
 
                 text-white
 
-                px-5
-                py-4
+                px-4
+                md:px-5
+
+                py-3
+                md:py-4
 
                 rounded-3xl
 
-                max-w-[75%]
+                max-w-[90%]
+                md:max-w-[75%]
+
+                text-sm
+                md:text-base
 
                 shadow-lg
                 shadow-purple-500/10
@@ -340,11 +382,7 @@
                 assistantWrapper
             )
 
-            // clear input
-
             input.value = ""
-
-            // auto scroll
 
             chat.scrollTop =
                 chat.scrollHeight
@@ -367,57 +405,57 @@
                 }
             )
 
-            // STREAM READER
-
             const reader =
                 response.body.getReader()
 
             const decoder =
                 new TextDecoder()
 
-            // STREAM LOOP
+            while (true) {
 
-            
-while (true) {
+                const { done, value } =
+                    await reader.read()
 
-    const { done, value } =
-        await reader.read()
+                if (done) {
 
-    if (done) {
+                    assistantBubble.innerHTML =
+                        assistantBubble.innerHTML
+                        .replace("▋", "")
 
-        // remove cursor when stream ends
+                    break
+                }
 
-        assistantBubble.innerHTML =
-            assistantBubble.innerHTML
-            .replace("▋", "")
+                const chunk =
+                    decoder.decode(value)
 
-        break
-    }
+                assistantBubble.innerHTML =
+                    assistantBubble.innerHTML
+                    .replace("▋", "")
 
-    const chunk =
-        decoder.decode(value)
+                assistantBubble.innerHTML +=
+                    chunk + "<span class='animate-pulse'>▋</span>"
 
-    // remove old cursor first
-
-    assistantBubble.innerHTML =
-        assistantBubble.innerHTML
-        .replace("▋", "")
-
-    // append new text + cursor
-
-    assistantBubble.innerHTML +=
-        chunk + "<span class='animate-pulse'>▋</span>"
-
-    // auto scroll
-
-    chat.scrollTop =
-        chat.scrollHeight
-}
-
-
+                chat.scrollTop =
+                    chat.scrollHeight
+            }
         }
 
     </script>
+
+    <!-- SCROLLBAR -->
+
+    <style>
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(168,85,247,0.4);
+            border-radius: 999px;
+        }
+
+    </style>
 
 </body>
 
