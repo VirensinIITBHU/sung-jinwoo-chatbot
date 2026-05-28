@@ -21,7 +21,9 @@ import os
 
 
 
-
+@app.get("/")
+async def root():
+    return {"message": "frontend route working"}
 
 @app.get("/")
 
